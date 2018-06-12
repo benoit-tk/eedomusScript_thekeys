@@ -1,0 +1,73 @@
+{
+    "plugin_id": "the-keys",
+    "name_fr": "The Keys",
+    "name_en": "The Keys",
+    "icon": "thekeys.png",
+    "version": "0.1",
+    "creation_date": "2018-06-12",
+    "modification_date": "2018-06-12",
+    "author": "benoit@boceto.fr",
+    "description_fr": "Commander la serrure The Keys depuis eedomus",
+    "description_en": "",
+    "forum_link": "",
+    "parameters": [
+        {
+            "parameter": "gateway_ip",
+            "description": "IP de la gateway",
+            "xtype": "textfield",
+            "field": "allowBlank:false, regex:/(\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})/, regexText:'Format attendue \\'192.168.0.26\\' ' "
+        },
+        {
+            "parameter": "locker_id",
+            "description": "ID de la serrure",
+            "xtype": "textfield",
+            "field": "allowBlank:false"
+        },
+        {
+            "parameter": "share_code",
+            "description": "Code du partage",
+            "xtype": "textfield",
+            "field": "allowBlank:false"
+        }
+    ],
+    "scripts": [
+        {
+            "name": "thekeys.php"
+        }
+    ],
+    "devices": [
+        {
+            "device_id": "thekeys_action",
+            "module_id": "41",
+            "type": "http",
+            "name_fr": "The keys - Action",
+            "icon": "thekeys.png",
+	    "utilisation_id": "48",
+            "parameters": {
+                "value_type": "list",
+                "ignore_errors": 3,
+                "VAR1": "plugin.parameters.gateway_ip",
+                "VAR2": "plugin.parameters.locker_id",
+                "VAR3": "plugin.parameters.share_code"
+            },
+            "values": [
+                {
+                    "value": "1",
+                    "description": "Ouvrir",
+                    "icon": "thekeys.png",
+                    "http_url": "http://localhost/script/?exec=thekeys.php",
+                    "http_type": "POST",
+                    "http_params": "action=1&locker_id=[VAR2]&share=[VAR3]"
+                },
+                {
+                    "value": "2",
+                    "description": "Fermer",
+                    "icon": "thekeys.png",
+                    "http_url": "http://localhost/script/?exec=thekeys.php",
+                    "http_type": "POST",
+                    "http_params": "action=1&locker_id=[VAR2]&share=[VAR3]"
+                }
+            ]
+        }
+    ]
+}
