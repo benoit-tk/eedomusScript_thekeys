@@ -42,7 +42,7 @@
             "type": "http",
             "name_fr": "The keys - Action",
             "icon": "thekeys.png",
-	    "utilisation_id": "48",
+			"utilisation_id": "48",
             "parameters": {
                 "value_type": "list",
                 "ignore_errors": 3,
@@ -68,6 +68,42 @@
                     "http_params": "?exec=thekeys.php&action=2&gateway_ip=[VAR1]&locker_id=[VAR2]&share=[VAR3]"
                 }
             ]
+        },
+		{
+            "device_id": "thekeys_state",
+            "module_id": "51",
+            "type": "http",
+            "name_fr": "The keys - State",
+            "icon": "thekeys.png",
+			"utilisation_id": "35",
+            "parameters": {
+                "value_type": "list",
+                "ignore_errors": 3,
+                "VAR1": "plugin.parameters.gateway_ip",
+                "VAR2": "plugin.parameters.locker_id",
+                "VAR3": "plugin.parameters.share_code"
+                "RAW_URL": "http://localhost/script/?exec=thekeys.php&action=3&gateway_ip=[VAR1]&locker_id=[VAR2]&share=[VAR3]",
+                "RAW_XPATH": "/root/status",
+                "POLLING": "5"
+            }
+        },
+		{
+            "device_id": "thekeys_battery",
+            "module_id": "51",
+            "type": "http",
+            "name_fr": "The keys - Battery",
+            "icon": "thekeys.png",
+			"utilisation_id": "35",
+            "parameters": {
+                "value_type": "list",
+                "ignore_errors": 3,
+                "VAR1": "plugin.parameters.gateway_ip",
+                "VAR2": "plugin.parameters.locker_id",
+                "VAR3": "plugin.parameters.share_code"
+                "RAW_URL": "http://localhost/script/?exec=thekeys.php&action=3&gateway_ip=[VAR1]&locker_id=[VAR2]&share=[VAR3]",
+                "RAW_XPATH": "/root/battery",
+                "POLLING": "60"
+            }
         }
     ]
 }

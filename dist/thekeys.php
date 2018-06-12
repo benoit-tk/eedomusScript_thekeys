@@ -8,8 +8,8 @@
 *******************************************************************************/
 
 /** Utile en cours de dev uniquement */
-//$eedomusScriptsEmulatorDatasetPath = "eedomusScriptsEmulator_dataset.json";
-//require_once ("eedomusScriptsEmulator.php");
+$eedomusScriptsEmulatorDatasetPath = "eedomusScriptsEmulator_dataset.json";
+require_once ("eedomusScriptsEmulator.php");
 
 /** Initialisation de la réponse */
 $response = null;
@@ -28,7 +28,18 @@ $ts = time();
 $key = hash_hmac('sha256',$ts,$code,true);
 $hash = base64_encode($key);
 
-$type = ($action == 1 ? "open":"close");
+switch($action){
+	case 1:
+		$type = "open";
+		break;
+	case 2:
+		$type = "close";
+		break;
+	case 3:
+		$type = "locker_status";
+		break;
+}
+
 
 
 $url = "http://$gateway_ip/$type";
