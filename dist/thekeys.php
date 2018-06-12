@@ -19,7 +19,7 @@ $locker_id = getArg("locker_id");
 $action = getArg("action");
 
 
-$gateway_ip = loadVariable('gateway_ip');
+$gateway_ip = getArg('gateway_ip');
 
 
 

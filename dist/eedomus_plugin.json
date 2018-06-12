@@ -55,17 +55,17 @@
                     "value": "1",
                     "description": "Ouvrir",
                     "icon": "thekeys.png",
-                    "http_url": "http://localhost/script/?exec=thekeys.php",
-                    "http_type": "POST",
-                    "http_params": "action=1&locker_id=[VAR2]&share=[VAR3]"
+                    "http_url": "http://localhost/script/",
+                    "http_type": "GET",
+                    "http_params": "?exec=thekeys.php&action=1&gateway_ip=[VAR1]&locker_id=[VAR2]&share=[VAR3]"
                 },
                 {
                     "value": "2",
                     "description": "Fermer",
                     "icon": "thekeys.png",
-                    "http_url": "http://localhost/script/?exec=thekeys.php",
-                    "http_type": "POST",
-                    "http_params": "action=1&locker_id=[VAR2]&share=[VAR3]"
+                    "http_url": "http://localhost/script/",
+                    "http_type": "GET",
+                    "http_params": "?exec=thekeys.php&action=2&gateway_ip=[VAR1]&locker_id=[VAR2]&share=[VAR3]"
                 }
             ]
         }
