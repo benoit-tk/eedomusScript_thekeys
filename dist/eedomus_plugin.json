@@ -83,9 +83,21 @@
                 "VAR2": "plugin.parameters.locker_id",
                 "VAR3": "plugin.parameters.share_code",
                 "RAW_URL": "http://localhost/script/?exec=thekeys.php&action=3&gateway_ip=[VAR1]&locker_id=[VAR2]&share=[VAR3]",
-                "RAW_XPATH": "/root/status",
+                "RAW_XPATH": "/root/code",
                 "POLLING": "5"
-            }
+            },
+            "values": [
+                {
+                    "value": "50",
+                    "description": "Ouvert",
+                    "icon": "thekeys_open.png"
+                },
+                {
+                    "value": "49",
+                    "description": "Fermé",
+                    "icon": "thekeys_close.png"
+                }
+			]
         },
 		{
             "device_id": "thekeys_battery",
