@@ -1,5 +1,5 @@
 {
-    "plugin_id": "the-keys",
+    "plugin_id": "the_keys",
     "name_fr": "The Keys",
     "name_en": "The Keys",
     "icon": "thekeys.png",
@@ -81,7 +81,7 @@
                 "ignore_errors": 3,
                 "VAR1": "plugin.parameters.gateway_ip",
                 "VAR2": "plugin.parameters.locker_id",
-                "VAR3": "plugin.parameters.share_code"
+                "VAR3": "plugin.parameters.share_code",
                 "RAW_URL": "http://localhost/script/?exec=thekeys.php&action=3&gateway_ip=[VAR1]&locker_id=[VAR2]&share=[VAR3]",
                 "RAW_XPATH": "/root/status",
                 "POLLING": "5"
@@ -99,7 +99,7 @@
                 "ignore_errors": 3,
                 "VAR1": "plugin.parameters.gateway_ip",
                 "VAR2": "plugin.parameters.locker_id",
-                "VAR3": "plugin.parameters.share_code"
+                "VAR3": "plugin.parameters.share_code",
                 "RAW_URL": "http://localhost/script/?exec=thekeys.php&action=3&gateway_ip=[VAR1]&locker_id=[VAR2]&share=[VAR3]",
                 "RAW_XPATH": "/root/battery",
                 "POLLING": "60"
