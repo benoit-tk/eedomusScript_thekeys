@@ -49,7 +49,11 @@ if($action == 3) {
         $json = json_decode($response);
 	$bat = $json->{'battery'};
 	error_log($bat);
-	$percent = intval(($bat - 6100) / (8000 - 6100) * 100);	 
+	if($bat > 5000) {
+            $percent = intval(($bat - 6100) / (8000 - 6100) * 100);
+	} else {
+	    $percent = intval(($bat - 3100) / (4000 - 3100) * 100);
+	}
 	if($percent >100) {
 	    $percent = 100;
 	} else if($percent < 0) {
