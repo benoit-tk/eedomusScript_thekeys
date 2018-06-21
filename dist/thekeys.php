@@ -45,7 +45,20 @@ switch($action){
 $url = "http://$gateway_ip/$type";
 
 $response = httpQuery($url, 'POST', "hash=$hash&identifier=$locker_id&ts=$ts");
-
+if($action == 3) {
+        $json = json_decode($response);
+	$bat = $json->{'battery'};
+	error_log($bat);
+	$percent = intval(($bat - 6100) / (8000 - 6100) * 100);	 
+	if($percent >100) {
+	    $percent = 100;
+	} else if($percent < 0) {
+            $percent = 0;
+	} else {
+	}
+	$json->{'battery'} = $percent;
+	$response = json_encode($json);
+}
 /** ****************************************************************************
 * Fin du script, affichage du résultat au format XML
 */
