@@ -19,3 +19,10 @@ You can open, close or check the status of a locker.
 * Open the share on https://api.the-keys.fr to get the share code
 ![Share](/screenshots/share.png)
 
+* Configure the plugin for eedomus:
+![Conf](/screenshots/conf_eedomus.png)
+
+VAR1: IP of the gateway
+VAR2: ID Locker. This is field "ID serrure" in http://api.the-keys.fr. This is not the ID in the URL
+VAR3: Code of the share. For example OGe3uGsPVYwVxLZM in the share created before.
+
